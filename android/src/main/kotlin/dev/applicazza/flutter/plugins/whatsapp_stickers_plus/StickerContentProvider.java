@@ -173,11 +173,9 @@ public class StickerContentProvider extends ContentProvider {
     }
 
     private List<StickerPack> getStickerPackList() {
-        if (stickerPackList == null) {
-            readContentFile(Objects.requireNonNull(getContext()));
-        }
-        return stickerPackList;
-    }
+      readContentFile(Objects.requireNonNull(getContext()));
+      return stickerPackList;
+  }
 
     private Cursor getPackForAllStickerPacks(@NonNull Uri uri) {
         return getStickerPackInfo(uri, getStickerPackList());
